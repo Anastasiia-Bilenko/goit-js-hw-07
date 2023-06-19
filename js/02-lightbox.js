@@ -23,15 +23,6 @@ function createListImg(galleryItems) {
 
 ulEl.insertAdjacentHTML("beforeend", liEl);
 
-const linkImgEl = document.querySelectorAll(".gallery__link");
-
-for (var i = 0 ; i < linkImgEl.length; i++) {
-  linkImgEl[i].addEventListener("click", noClick) ; 
-}
-   
-function noClick(evt) {
-    evt.preventDefault();
-}
 function imgClickFunction(evt) {
     if (evt.target.nodeName !== "IMG") {
         return

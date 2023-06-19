@@ -23,23 +23,13 @@ function createListImg(galleryItems) {
 ulEl.insertAdjacentHTML("beforeend", liEl);
 
 function imgClickFunction(evt) {
+  evt.preventDefault()
     if ( evt.target.nodeName !== "IMG") {
         return
     }
-   
     const instance = basicLightbox.create(`
     <img src="${evt.target.dataset.source}" width="800" height="600">
 `)
 instance.show() 
     
-}
-
-const linkImgEl = document.querySelectorAll(".gallery__link");
-
-for (var i = 0 ; i < linkImgEl.length; i++) {
-  linkImgEl[i].addEventListener("click", noClick) ; 
-}
-   
-function noClick(evt) {
-    evt.preventDefault();
 }
